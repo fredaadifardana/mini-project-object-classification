@@ -2,10 +2,16 @@ import "./App.css";
 import React from "react";
 import Webcam from "react-webcam";
 function App() {
+  const videoOption = {
+    width: 720,
+    height: 480,
+    facingMode: "enviroment",
+  };
   return (
     <>
       <p>Object Classification</p>
-      <Webcam audio={false}></Webcam>
+      <button></button>
+      <Webcam audio={false} videoConstraints={videoOption}></Webcam>
     </>
   );
 }
