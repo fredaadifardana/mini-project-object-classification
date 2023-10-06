@@ -95,7 +95,7 @@ function App() {
     <div className="container">
       <div className="container-content">
         <div className="container-video">
-          <h2>Object Dettection</h2>
+          <h2>Object Detection</h2>
           <Webcam
             id="videoSource"
             audio={false}
@@ -111,7 +111,7 @@ function App() {
           </button>
         </div>
         <div className="container-history">
-          <h2>Hasil Dettection</h2>
+          <h2>Hasil Detection</h2>
           <div className="container-showImg">
             <div style={rectStyle}></div>
             <img
