@@ -95,7 +95,7 @@ function App() {
     <div className="container">
       <div className="container-content">
         <div className="container-video">
-          <h2>Deteksi Objek</h2>
+          <h2>Deteksi Object</h2>
           <Webcam
             id="videoSource"
             audio={false}
