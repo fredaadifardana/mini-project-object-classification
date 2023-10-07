@@ -5,22 +5,25 @@ import "./App.css";
 import React, { useState, useEffect, useRef } from "react";
 
 function App() {
-  const [model, setModel] = useState<cocoSsd.ObjectDetection | null>(null);
   const videoRef = useRef<Webcam | null>(null);
+  const [model, setModel] = useState<cocoSsd.ObjectDetection | null>(null);
   const [objectName, setObjectName] = useState("");
   const [objectScore, setObjectScore] = useState("");
   const [statusData, setStatusData] = useState("");
-  const [imgUrl, setImgUrl] = useState<string | null | undefined>("");
-  // make box
+  const [imgUrl, setImgUrl] = useState<string | null | undefined>(
+    "../src/assets/error_image.jpg"
+  );
   const [xMin, setXMin] = useState(0);
   const [yMin, setYMin] = useState(0);
   const [xMax, setXMax] = useState(0);
   const [yMax, setYMax] = useState(0);
 
+  // memuat dataset ketika web diakses
   async function loadModel() {
     try {
       const dataset = await cocoSsd.load();
       setModel(dataset);
+      // console.log(model);
       console.log("Dataset Siap");
     } catch (error) {
       console.log(error);
@@ -36,7 +39,6 @@ function App() {
   async function predict() {
     if (model && videoRef.current && videoRef.current.video) {
       const detection = await model.detect(videoRef.current.video);
-      console.log(detection);
       //   if (detection.length > 0) {
       //     detection.map((result, i) => {
       //       setObjectName(result.class);
@@ -93,7 +95,7 @@ function App() {
     <div className="container">
       <div className="container-content">
         <div className="container-video">
-          <h2 className="title">Object Dettection</h2>
+          <h2>Deteksi Object</h2>
           <Webcam
             id="videoSource"
             audio={false}
@@ -109,7 +111,7 @@ function App() {
           </button>
         </div>
         <div className="container-history">
-          <h2 className="title">Hasil Dettection</h2>
+          <h2>Hasil Deteksi</h2>
           <div className="container-showImg">
             <div style={rectStyle}></div>
             <img
