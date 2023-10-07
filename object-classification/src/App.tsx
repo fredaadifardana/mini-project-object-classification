@@ -98,7 +98,7 @@ function App() {
             id="videoSource"
             audio={false}
             videoConstraints={videoOption}
-            mirrored={true}
+            mirrored={false}
             ref={videoRef}
             screenshotFormat="image/jpeg"
             // height={480}
