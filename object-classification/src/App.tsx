@@ -5,8 +5,8 @@ import "./App.css";
 import React, { useState, useEffect, useRef } from "react";
 
 function App() {
-  const [model, setModel] = useState<cocoSsd.ObjectDetection | null>(null);
   const videoRef = useRef<Webcam | null>(null);
+  const [model, setModel] = useState<cocoSsd.ObjectDetection | null>(null);
   const [objectName, setObjectName] = useState("");
   const [objectScore, setObjectScore] = useState("");
   const [statusData, setStatusData] = useState("");
