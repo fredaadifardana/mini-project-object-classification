@@ -63,7 +63,7 @@ h3 {
   flex-direction: column;
   gap: 24px;
   /* background: #fff; */
-  border: 2px solid white;
+  /* border: 2px solid white; */
   height: min-content;
   /* width: 100%; */
   box-sizing: border-box;
