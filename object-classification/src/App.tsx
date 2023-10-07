@@ -5,8 +5,8 @@ import "./App.css";
 import React, { useState, useEffect, useRef } from "react";
 
 function App() {
-  const [model, setModel] = useState<cocoSsd.ObjectDetection | null>(null);
   const videoRef = useRef<Webcam | null>(null);
+  const [model, setModel] = useState<cocoSsd.ObjectDetection | null>(null);
   const [objectName, setObjectName] = useState("");
   const [objectScore, setObjectScore] = useState("");
   const [statusData, setStatusData] = useState("");
@@ -95,7 +95,7 @@ function App() {
     <div className="container">
       <div className="container-content">
         <div className="container-video">
-          <h2>Deteksi Objek</h2>
+          <h2>Deteksi Object</h2>
           <Webcam
             id="videoSource"
             audio={false}
